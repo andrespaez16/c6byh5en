@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :products, :defaults => { :format => 'json' }
-   namespace :api do
+  resources :products
+   namespace :api ,:defaults => { :format => 'json' } do
     namespace :v1 do
-      resources :products, :defaults => { :format => 'json' }, only: [:index]
+      resources :products, only: [:index]
    
    end
   end  
